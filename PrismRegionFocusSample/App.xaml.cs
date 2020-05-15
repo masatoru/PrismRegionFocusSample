@@ -1,6 +1,8 @@
 ﻿using Prism.Ioc;
 using PrismRegionFocusSample.Views;
 using System.Windows;
+using ModuleSet;
+using Prism.Modularity;
 
 namespace PrismRegionFocusSample
 {
@@ -17,6 +19,11 @@ namespace PrismRegionFocusSample
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
 
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ModuleSet.ModuleAModule>();
         }
     }
 }
